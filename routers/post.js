@@ -13,13 +13,7 @@ router.get("/", async (req, res) => {
 router.get("/add", async (req, res) => {
   res.render("posts/add");
 });
-router.post("/", async (req, res) => {
-  const { title, content } = req.body;
-  let error = [];
-  if (!title) error.push("title required");
-  if (!content) error.push("content required");
-  if (error.length > 0) res.render("posts/add", { error, title, content });
-});
+
 //tao bai viet
 router.post("/", async (req, res) => {
   const { title, content } = req.body;
